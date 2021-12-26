@@ -17,7 +17,7 @@ func main() {
 
 	if host == "" {
 		// You can use 0.0.0.0 if you want to access the server from outside
-		host = "127.0.0.1"
+		host = ""
 	}
 
 	fmt.Println("Server started on port " + port)
