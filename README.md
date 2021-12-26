@@ -5,6 +5,8 @@ Generate ASCII art from image.
 You can try this API here:
 [ascii.projects.shaynlink.dev](http://ascii.projects.shaynlink.dev) or if you prefer using HTTPS [ascii-generator.herokuapp.com](https://ascii-generator.herokuapp.com)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 # Installation
 
 ## Prerequisites
@@ -82,3 +84,5 @@ All of the [contributors](https://github.com/shaynlink/ascii-generator/graphs/co
 Thanks you for support my project and me, using ascii-generator.
 
 You can also support me by [donate](https://paypal.me/shaynl4nk), [patron](https://www.patreon.com/shaynlink) or [buy me a coffee](https://www.buymeacoffee.com/shaynlink).
+
+<a href="https://www.buymeacoffee.com/shaynlink"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=shaynlink&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff" width="170"></a>
