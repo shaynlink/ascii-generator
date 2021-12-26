@@ -1,0 +1,5 @@
+vendor/* linguist-vendored
+app.json linguist-documentation
+heroku.yml linguist-documentation
+Procfile linguist-documentation
+Makefile linguist-documentation

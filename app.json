@@ -1,0 +1,7 @@
+{
+    "name": "Ascii Art Generator",
+    "description": "Generate ASCII art from images",
+    "keywords": ["ascii", "art", "generator"],
+    "webiste": "https://github.com/shaynlink/ascii-generator",
+    "repository": "https://github.com/shaynlink/ascii-generator"
+}

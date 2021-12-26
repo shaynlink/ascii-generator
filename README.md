@@ -25,12 +25,12 @@ I recommend to use [Postman](https://www.getpostman.com/). for try API in local
 
 | Method | Path | Description |
 | ------ | ---- | ----------- |
-| GET | / | Generate ASCII art from image. |
+| POST | / | Generate ASCII art from image. |
 | * | * | Generate ASCII art from image. |
 
 # Parameters
 
-## (GET) /
+## (POST) /
 Parameters **form-data**
  - **image**: Image file.
  - **width**: Width of the generated ASCII art.
