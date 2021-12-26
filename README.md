@@ -21,6 +21,8 @@ go run *.go
 
 I recommend to use [Postman](https://www.getpostman.com/). for try API in local
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/13569584-17e2f4bc-70b7-4ba2-b396-0731824bf3f5?action=collection%2Ffork&collection-url=entityId%3D13569584-17e2f4bc-70b7-4ba2-b396-0731824bf3f5%26entityType%3Dcollection%26workspaceId%3D55989dbd-cebe-4877-8076-f5843a8b1ddb)
+
 # Enpoints
 
 | Method | Path | Description |

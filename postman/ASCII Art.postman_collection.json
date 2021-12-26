@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "17e2f4bc-70b7-4ba2-b396-0731824bf3f5",
+		"name": "ASCII Art",
+		"description": "Generate you image to ASCII Art",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ascii art",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response a text\", () => {",
+							"    pm.expect(typeof pm.response.text()).to.eql(\"string\")",
+							"});",
+							"",
+							"pm.test(\"Response good resolution\", () => {",
+							"    const line = pm.response.text().split(\"\\n\").shift();",
+							"",
+							"    let resolution = 100;",
+							"",
+							"    if (pm.variables.has(\"width\")) {",
+							"        resolution = parseInt(pm.variables.get(\"width\"))",
+							"    };",
+							"",
+							"    pm.expect(line.length).to.eql(resolution);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"contentType": "image/png",
+							"description": "Image to convert",
+							"type": "file",
+							"src": "/Users/shaynlink/Pictures/Untitled.png"
+						},
+						{
+							"key": "width",
+							"value": "{{width}}",
+							"contentType": "",
+							"description": "resolution of ASCII Art",
+							"type": "text"
+						},
+						{
+							"key": "invert",
+							"value": "true",
+							"description": "invert ASCII symbol",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ascii.projects.shaynlink.dev",
+					"protocol": "http",
+					"host": [
+						"ascii",
+						"projects",
+						"shaynlink",
+						"dev"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "width",
+			"value": "80"
+		}
+	]
+}
