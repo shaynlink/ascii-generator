@@ -2,8 +2,7 @@
 
 Generate ASCII art from image.
 
-You can try this API here:
-[ascii.projects.shaynlink.dev](http://ascii.projects.shaynlink.dev) or if you prefer using HTTPS [ascii-generator.herokuapp.com](https://ascii-generator.herokuapp.com)
+You can try this API here: [ascii-generator.herokuapp.com](https://ascii-generator.herokuapp.com)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
