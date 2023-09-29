@@ -1,18 +1,27 @@
-FROM heroku/heroku:20-build as build
+# syntax=docker/dockerfile:1
 
-COPY . /app
+FROM golang:1.19
+
+# Set destination for COPY
 WORKDIR /app
 
-RUN mkdir -p /tmp/buildpack/heroku/go /tmp/build_cache /tmp/env
-RUN curl https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/go.tgz | tar xz -C /tmp/buildpack/heroku/go
+# Download Go modules
+COPY go.mod go.sum ./
+RUN go mod download
 
-RUN STACK=heroku-20 /tmp/buildpack/heroku/go/bin/compile /app /tmp/build_cache /tmp/env
+# Copy the source code. Note the slash at the end, as explained in
+# https://docs.docker.com/engine/reference/builder/#copy
+COPY *.go ./
 
-FROM heroku/heroku:20
+# Build
+RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
 
-COPY --from=build /app /app
-ENV HOME /app
-WORKDIR /app
-RUN useradd -m heroku
-USER heroku
-CMD /app/bin/ascii-generator
+# Optional:
+# To bind to a TCP port, runtime parameters must be supplied to the docker command.
+# But we can document in the Dockerfile what ports
+# the application is going to listen on by default.
+# https://docs.docker.com/engine/reference/builder/#expose
+EXPOSE 8080
+
+# Run
+CMD ["/docker-gs-ping"]
